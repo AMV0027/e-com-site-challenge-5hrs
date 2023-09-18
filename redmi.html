@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">View Order</h2>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Order Details</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Order Information</h5>
+                <p><strong>Order Number:</strong> 12342</p>
+                <p><strong>Order Name:</strong> Redmi 12c</p>
+                <p><strong>Expected Delivery Date:</strong> 2023-10-15</p>
+                <h5 class="mt-4">Order Items</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Image</th> 
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle overflow-hidden" style="width: 50px; height: 50px;">
+                                    <img src="order-image-4.jpg" alt="Product X" class="w-100 h-100">
+                                </div>
+                            </td>
+                            <td>Redmi 12c</td>
+                            <td>1</td>
+                            <td>₹7,499</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 class="mt-4">Order Progress</h5>
+                <div class="progress">
+                    <div id="orderProgressBar" class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">95%</div>
+                </div>
+                <br>
+                <div>
+                    <p><strong>PROGRESS:</strong> OUT FOR DELIVERY</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="order-listing.html" class="btn btn-secondary">Back to Order Listing</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

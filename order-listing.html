@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Listing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .circular-frame {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; 
+            overflow: hidden;
+        }
+        .circular-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Order Listing</h2>
+        <div class="mb-4">
+            <input type="text" id="orderSearch" class="form-control" placeholder="Search by Order Name">
+        </div>
+        <div class="mt-4">
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order Photo</th>
+                    <th>Order Name</th>
+                    <th>Expected Delivery Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="circular-frame">
+                            <img src="order-image-1.jpg" alt="Order Image">
+                        </div>
+                    </td>
+                    <td>Acer one 14</td>
+                    <td>2023-09-30</td>
+                    <td>
+                        <a href="acerlap.html" class="btn btn-primary">View Details</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circular-frame">
+                            <img src="order-image-2.jpg" alt="Order Image">
+                        </div>
+                    </td>
+                    <td>HP 247</td>
+                    <td>2023-10-05</td>
+                    <td>
+                        <a href="hp247.html" class="btn btn-primary">View Details</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circular-frame">
+                            <img src="order-image-3.jpg" alt="Order Image">
+                        </div>
+                    </td>
+                    <td>Asus vivobook 15</td>
+                    <td>2023-10-10</td>
+                    <td>
+                        <a href="vivo.html" class="btn btn-primary">View Details</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circular-frame">
+                            <img src="order-image-4.jpg" alt="Order Image">
+                        </div>
+                    </td>
+                    <td>Redmi 12c</td>
+                    <td>2023-10-15</td>
+                    <td>
+                        <a href="redmi.html" class="btn btn-primary">View Details</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circular-frame">
+                            <img src="order-image-5.jpg" alt="Order Image">
+                        </div>
+                    </td>
+                    <td>Sennheiser HD 450SE</td>
+                    <td>2023-10-20</td>
+                    <td>
+                        <a href="headset.html" class="btn btn-primary">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const orderSearch = document.getElementById("orderSearch");
+        const table = document.querySelector("table");
+        const rows = table.getElementsByTagName("tr");
+
+        orderSearch.addEventListener("keyup", () => {
+            const searchText = orderSearch.value.toLowerCase();
+
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const orderName = row.getElementsByTagName("td")[1].textContent.toLowerCase();
+
+                if (orderName.includes(searchText)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
